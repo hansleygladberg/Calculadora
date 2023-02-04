@@ -62,8 +62,11 @@
         }
 
         function resultado(){
+            
             var display = document.querySelector("#display").innerHTML;
+            if(display){
             document.querySelector("#display").innerHTML = eval(display);
+           }   
         }
 
     </script>

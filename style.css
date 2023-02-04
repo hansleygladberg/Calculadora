@@ -44,6 +44,7 @@ body{
     text-align: right;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden;
 
 }
 
@@ -65,10 +66,11 @@ body{
     outline: none;
     border: none;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
-#botoes button:active{
-    margin-top: 2px;
+#botoes button.botaon:active{
+    border-bottom: 4px solid rgb(73, 64, 64);
 }
 
 #botoes button.botaon{
