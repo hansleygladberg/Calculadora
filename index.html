@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;700&family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    
+    <div id="corpo">
+        <div id="topo">CALCULADORA</div>
+        <div id="display"></div>
+        <div id="botoes">
+            <button class="botaon" value="7" onclick="digita(7)">7</button>
+            <button class="botaon" value="8" onclick="digita(8)">8</button>
+            <button class="botaon" value="9" onclick="digita(9)">9</button>
+            <button class="botaodel" value="" onclick="back()">DEL</button>
+            <button class="botaon" value="4" onclick="digita(4)">4</button>
+            <button class="botaon" value="5" onclick="digita(5)">5</button>
+            <button class="botaon" value="6" onclick="digita(6)">6</button>
+            <button class="botaon" value="+" onclick="digita('+')">+</button>
+            <button class="botaon" value="1" onclick="digita(1)">1</button>
+            <button class="botaon" value="2" onclick="digita(2)">2</button>
+            <button class="botaon" value="3" onclick="digita(3)">3</button>
+            <button class="botaon" value="-" onclick="digita('-')">-</button>
+            <button class="botaon" value="." onclick="digita('.')">.</button>
+            <button class="botaon" value="0" onclick="digita(0)">0</button>
+            <button class="botaon" value="/" onclick="digita('/')">/</button>
+            <button class="botaon" value="x" onclick="digita('*')">*</button>
+            <button class="botaoreset" value="" onclick="reset()">RESET</button>
+            <button class="botaoigual" value="=" onclick="resultado()">=</button>
+        </div>
+    </div>
+
+    <script>
+
+
+        function digita(num){
+            var display = document.querySelector("#display").innerHTML;
+
+            console.log(num + display);
+
+            document.querySelector("#display").innerHTML = display + num;
+    
+        }
+
+        function back(){
+        var display = document.getElementById('display').innerHTML;
+        document.getElementById('display').innerHTML = display.substring(0, display.length -1)
+
+        }
+
+        function reset(){
+            var display = document.querySelector("#display").innerHTML;
+            document.querySelector("#display").innerHTML = "";
+        }
+
+        function resultado(){
+            var display = document.querySelector("#display").innerHTML;
+            document.querySelector("#display").innerHTML = eval(display);
+        }
+
+    </script>
+
+</body>
+</html>
